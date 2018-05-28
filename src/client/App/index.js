@@ -1,7 +1,6 @@
-
 import React from 'react';
-import styled from 'styled-components';
 import { Alert, Col, Layout, Row } from 'antd';
+import FaucetStatus from './faucetStatus';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -13,24 +12,7 @@ const App = props => (
     <Content style={{ padding: "0 50px" }}>
       <Layout>
         <Content style={{ backgroundColor: "#ffffff", padding: 32, minHeight: "calc(100vh - 133px)" }}>
-          <Row>
-            <Col xs={{ span: 20, push: 2 }} md={{ span: 16, push: 4 }} lg={{ span: 12, push: 6 }} xl={{ span: 8, push: 8 }} >
-              <h2>Current block height: {props.blockHeight}</h2>
-              { props.faucetStatus ? (
-                <Alert
-                  message="Faucet status: healthy"
-                  type="success"
-                  showIcon
-                />
-              ) : (
-                <Alert
-                  message="Faucet status: not healthy"
-                  type="error"
-                  showIcon
-                />
-              ) }
-            </Col>
-          </Row>
+          <FaucetStatus {...props} />
           <Row>
             <Col xs={{ span: 20, push: 2 }} md={{ span: 16, push: 4 }} lg={{ span: 12, push: 6 }} xl={{ span: 8, push: 8 }} >
               <Alert
