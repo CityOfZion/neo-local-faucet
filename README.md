@@ -1,2 +1,2 @@
-# neo-faucet-nodejs
-Dockerized NodeJS version of neo-faucet
+# neo-local-faucet
+Node faucet for neo-local
