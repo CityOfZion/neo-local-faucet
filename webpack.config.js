@@ -1,22 +1,25 @@
 const webpack = require('webpack');
-const nodeExternals = require('webpack-node-externals');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
-  entry: './src/server.js',
+  devtool: 'inline-source-map',
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'server.js',
-    publicPath: '/'
+    path: path.resolve(__dirname, 'assets'),
+    filename: 'bundle.js'
   },
-  target: 'node',
-  externals: nodeExternals(),
   module: {
-    rules: [
+    loaders: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader'
+        test: /.js$/,
+        loader: 'babel-loader',
+        include: path.join(__dirname, 'src'),
+        exclude: /node_modules/,
+        query: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+          plugins: ["@babel/plugin-proposal-class-properties"]
+        }
       }
     ]
   }
