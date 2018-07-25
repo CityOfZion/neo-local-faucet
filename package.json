@@ -1,0 +1,57 @@
+{
+  "name": "neo-local-faucet",
+  "version": "1.0.0",
+  "description": "A dockerized, nodejs version of neo-faucet",
+  "main": "server.js",
+  "scripts": {
+    "build": "npm run build:server && npm run build:client",
+    "build:client": "webpack --config ./webpack.config.js/",
+    "build:server": "babel ./src -d build",
+    "start": "npm run build && node ./build/server/index.js",
+    "dev:start": "onchange 'src/**/*.js' -- npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/be-neo/neo-faucet-nodejs.git"
+  },
+  "keywords": [
+    "neo",
+    "blockchain",
+    "node",
+    "express",
+    "tokens",
+    "nep5",
+    "nep-5",
+    "gas",
+    "technology",
+    "crypto"
+  ],
+  "author": "Jeroen Peeters <contact@jeroenpeeters.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/be-neo/neo-faucet-nodejs/issues"
+  },
+  "homepage": "https://github.com/be-neo/neo-faucet-nodejs#readme",
+  "dependencies": {
+    "@babel/polyfill": "7.0.0-beta.49",
+    "@cityofzion/neon-js": "^3.9.2",
+    "antd": "^3.5.4",
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "styled-components": "^3.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.49",
+    "@babel/core": "7.0.0-beta.49",
+    "@babel/plugin-proposal-class-properties": "7.0.0-beta.49",
+    "@babel/preset-env": "7.0.0-beta.49",
+    "@babel/preset-react": "7.0.0-beta.49",
+    "babel-loader": "^8.0.0-beta",
+    "html-webpack-plugin": "^3.2.0",
+    "onchange": "^4.0.0",
+    "webpack": "^3.11.0"
+  }
+}
