@@ -46,10 +46,11 @@ export default class App extends React.Component {
                 <Col xs={{ span: 20, push: 2 }} md={{ span: 16, push: 4 }} lg={{ span: 12, push: 6 }} xl={{ span: 8, push: 8 }} >
                   <h2>Guidelines</h2>
                   <ul>
-                    <li>Enter your NEO address in the form below and click on the <code>Check</code> button</li>
+                    <li>Enter your NEO address in the form below and click on the <code>Request</code> button</li>
                     <li>If your address hasn't requested NEO and GAS recently, you will be able to submit your request</li>
+                    <li>You can also use the <code>Generate</code> button to create a new NEO address pre-filled with NEO/GAS</li>
                     <li>Each request will be given {config.gasReward} GAS and {config.neoReward} NEO</li>
-                    <li>After requesting NEO and GAS, your address will not be able to request NEO and Gas for {config.minBlocks} blocks</li>
+                    <li>After requesting NEO and GAS, your address will not be able to request NEO and GAS for {config.minBlocks} blocks</li>
                   </ul>
                 </Col>
               </Row>

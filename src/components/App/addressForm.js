@@ -130,8 +130,8 @@ export default class AddressForm extends React.Component {
               this.state.status === faucetStatuses[0] || this.state.status === faucetStatuses[4]
               ? <Button type="primary" onClick={this.generate} style={{ marginRight: '8px' }}>Generate</Button>
               : this.state.status === faucetStatuses[2]
-                ? <Button type="primary" loading disabled style={{ marginRight: '8px' }}>Requesting</Button>
-                : <Button type="primary" disabled style={{ marginRight: '8px' }}>Request</Button>
+                ? <Button type="primary" loading disabled style={{ marginRight: '8px' }}>Generating</Button>
+                : <Button type="primary" disabled style={{ marginRight: '8px' }}>Generate</Button>
             }
             {
               this.state.status === faucetStatuses[0] || this.state.status === faucetStatuses[4]
