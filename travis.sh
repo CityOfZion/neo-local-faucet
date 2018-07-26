@@ -14,6 +14,7 @@ then
   docker push $REPO
   git checkout master
   git pull origin master
+  git commit -a -m $VERSION
   git tag $VERSION
   git push origin $BRANCH --tags
 fi
