@@ -12,8 +12,4 @@ then
   docker build -f Dockerfile -t $REPO:latest .
   docker tag $REPO:latest $REPO:$VERSION
   docker push $REPO
-  git checkout master
-  git pull origin master
-  git tag $VERSION
-  git push origin master --tags
 fi
