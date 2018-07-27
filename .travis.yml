@@ -8,3 +8,5 @@ services:
 deploy:
   - provider: script
     script: bash travis.sh
+    on:
+      tags: true
