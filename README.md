@@ -12,16 +12,20 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/be-neo/neo-local-faucet/tags">
-    <img src="https://img.shields.io/github/tag/be-neo/neo-local-faucet.svg">
+  <a href="https://github.com/CityOfZion/neo-local-faucet/tags">
+    <img src="https://img.shields.io/github/tag/CityOfZion/neo-local-faucet.svg">
   </a>
-  <a href="https://github.com/be-neo/neo-local-faucet/commits/master">
-    <img src="https://img.shields.io/github/last-commit/be-neo/neo-local-faucet.svg">
+  <a href="https://travis-ci.org/CityOfZion/neo-local-faucet">
+    <img src="https://img.shields.io/travis/CityOfZion/neo-local-faucet/master.svg">
+  </a>
+  <a href="https://github.com/CityOfZion/neo-local-faucet/commits/master">
+    <img src="https://img.shields.io/github/last-commit/CityOfZion/neo-local-faucet.svg">
   </a>
 </p>
 
 ## What?
-Node faucet for neo-local. Uses your local Neoscan to determine and distribute rewards.
+This is a faucet for neo-local. It's made with Node and React and uses your local neo-scan to determine and distribute rewards.
+Everything is setup to be extremely configurable, for more info check the Configurable environment variables below.
 
 ## Features
 * Request NEO/GAS for an existing address
@@ -29,10 +33,10 @@ Node faucet for neo-local. Uses your local Neoscan to determine and distribute r
 * Automatic GAS claims for the faucet account
 
 ## Configurable environment variables
-* `NEOSCAN` The address of your neo-local NEOSCAN instance. The standard value is `localhost:4000`.
-* `MIN_BLOCK` the minimum amount of blocks that need to have passed before reapplying. The standard value is `5000`.
-* `FAUCET_WIF` the WIF of the Faucet account. The standard value is `KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr`.
-* `FAUCET_ADDRESS` the domain where the faucet is located. The standard value is `localhost`.
-* `PORT` the port where the faucet is located. The standard value is `4002`.
-* `NEO_REWARD` the amount of NEO the faucet rewards. The standard value is `100`.
-* `GAS_REWARD` the amount of GAS the faucet rewards. The standard value is `2000`.
+* `NEOSCAN` is the address of your neo-local NEOSCAN instance. Defaults to `localhost:4000` which is the standard neo-scan URL in neo-local
+* `MIN_BLOCK` is the minimum amount of blocks that need to have passed before reapplying. Defaults to `5000` blocks
+* `FAUCET_WIF` is the WIF of the Faucet account. The standard value is `KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr`, which holds all NEO and GAS in the neo-privatenet image
+* `FAUCET_ADDRESS` is the domain where the faucet is located. Defaults to `localhost`
+* `PORT` is the port where the faucet is located. Defaults to `4002`
+* `NEO_REWARD` is the amount of NEO the faucet rewards. Defaults to `100`
+* `GAS_REWARD` is the amount of GAS the faucet rewards. Defaults to `2000`
