@@ -12,7 +12,10 @@ const Html = ({ body, styles, title, preloadedState }) => `
     <body style="margin:0; background-color:#fff;">
       <div id="app">${body}</div>
       <script>
-        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
+          /</g,
+          "\\u003c"
+        )}
       </script>
       <script src="/assets/bundle.js"></script>
     </body>

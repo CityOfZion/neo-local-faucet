@@ -1,11 +1,39 @@
-import Neon from '@cityofzion/neon-js';
-import { get } from 'axios';
+import Neon from "@cityofzion/neon-js";
+import { get } from "axios";
 
-import { faucet, minBlocks, neoscanAddress } from './variables';
+import {
+  faucet,
+  minBlocks,
+  neoscanAddress,
+  underRewardAmount,
+  neoReward,
+  gasReward
+} from "./variables";
 
 const checkAddress = async address => {
   if (Neon.is.address(address) && address !== faucet.address) {
-    const { data: { height } } = await get(`${neoscanAddress}/v1/get_height`);
+    if (underRewardAmount) {
+      let staysUnderRewardAmount = true;
+      const {
+        data: { balance }
+      } = await get(`${neoscanAddress}/v1/get_balance/${address}`);
+      balance.forEach(b => {
+        if (
+          (b.asset === "NEO" && b.amount >= neoReward) ||
+          (b.asset === "GAS" && b.amount >= gasReward)
+        ) {
+          staysUnderRewardAmount = false;
+        }
+      });
+
+      if (!staysUnderRewardAmount) {
+        return false;
+      }
+    }
+
+    const {
+      data: { height }
+    } = await get(`${neoscanAddress}/v1/get_height`);
     const maxBlock = height - minBlocks;
     let page = 0;
     let currentIteratedBlock = height;
@@ -13,9 +41,17 @@ const checkAddress = async address => {
 
     // check if found before maxBlock
     while (!found && currentIteratedBlock > maxBlock) {
-      const { data } = await get(`${neoscanAddress}/v1/get_last_transactions_by_address/${faucet.address}/${page}`);
+      const { data } = await get(
+        `${neoscanAddress}/v1/get_last_transactions_by_address/${
+          faucet.address
+        }/${page}`
+      );
       data.forEach(tx => {
-        if (!found && currentIteratedBlock > maxBlock && tx.type === "ContractTransaction") {
+        if (
+          !found &&
+          currentIteratedBlock > maxBlock &&
+          tx.type === "ContractTransaction"
+        ) {
           let faucetVin = false;
           let addressVout = false;
 
