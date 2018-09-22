@@ -15,3 +15,4 @@ deploy:
     script: bash travis.sh
     on:
       tags: true
+      
