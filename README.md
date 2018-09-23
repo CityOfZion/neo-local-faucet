@@ -36,11 +36,11 @@ Everything is setup to be extremely configurable, for more info check the Config
 
 ## Configurable environment variables
 
-- `NEOSCAN` is the address of your neo-local NEOSCAN instance. Defaults to `localhost:4000` which is the standard neo-scan URL in neo-local
-- `MIN_BLOCK` is the minimum amount of blocks that need to have passed before reapplying. Defaults to `5000` blocks
-- `FAUCET_WIF` is the WIF of the Faucet account. The standard value is `KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr`, which holds all NEO and GAS in the neo-privatenet image
 - `FAUCET_ADDRESS` is the domain where the faucet is located. Defaults to `localhost`
-- `PORT` is the port where the faucet is located. Defaults to `4002`
-- `NEO_REWARD` is the amount of NEO the faucet rewards. Defaults to `100`
+- `FAUCET_WIF` is the WIF of the Faucet account. The standard value is `KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr`, which holds all NEO and GAS in the neo-privatenet image
 - `GAS_REWARD` is the amount of GAS the faucet rewards. Defaults to `2000`
+- `MIN_BLOCK` is the minimum amount of blocks that need to have passed before reapplying. Defaults to `5000` blocks
+- `NEOSCAN` is the address of your neo-local NEOSCAN instance. Defaults to `localhost:4000` which is the standard neo-scan URL in neo-local
+- `NEO_REWARD` is the amount of NEO the faucet rewards. Defaults to `100`
+- `PORT` is the port where the faucet is located. Defaults to `4002`
 - **new!** `UNDER_REWARD_AMOUNT` is a flag that requires you to have funds lower than the set rewards in order to receive from the faucet. Defaults to `true`.
