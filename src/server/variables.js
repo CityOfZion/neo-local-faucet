@@ -9,7 +9,7 @@ export const faucet = new wallet.Account(
 );
 
 export const faucetAddress = process.env.FAUCET_ADDRESS || "localhost";
-export const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 4020;
+export const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 4002;
 export const neoReward = process.env.NEO_REWARD || 100;
 export const gasReward = process.env.GAS_REWARD || 2000;
 export const underRewardAmount = process.env.UNDER_REWARD_AMOUNT

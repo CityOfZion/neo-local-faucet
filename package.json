@@ -1,6 +1,6 @@
 {
   "name": "neo-local-faucet",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A dockerized, nodejs version of neo-faucet",
   "main": "server.js",
   "scripts": {
